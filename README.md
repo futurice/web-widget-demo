@@ -45,3 +45,7 @@ File `script-loader.js` is excluded from the build because bundlers add overhead
   - The script to render the widgets. This script expose a function `inflate` globally. Wait for this function to become available before use.
 - main.css
   - The style for your widgets. Usually you should build your own style.
+
+## Note for Redux users
+- Do not use Redux. Use state instead.
+- If you have to use Redux, make sure that your widget component is the root element.

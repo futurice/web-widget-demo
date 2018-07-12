@@ -30,16 +30,3 @@ function loadScript() {
 
 loadCss()
 loadScript()
-
-if (!window.waitInflate) {
-    function waitInflate(initId) {
-        const i = setInterval(function () {
-            if (window.inflate) {
-                clearInterval(i)
-                window.inflate(initId)
-            }
-        }, 100)
-    }
-
-    window.waitInflate = waitInflate
-}
