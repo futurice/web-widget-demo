@@ -31,13 +31,15 @@ function loadScript() {
 loadCss()
 loadScript()
 
-function waitInflate(initId) {
-    const i = setInterval(function() {
-        if (window.inflate) {
-            clearInterval(i)
-            window.inflate(initId)
-        }
-    }, 100)
-}
+if (!window.waitInflate) {
+    function waitInflate(initId) {
+        const i = setInterval(function () {
+            if (window.inflate) {
+                clearInterval(i)
+                window.inflate(initId)
+            }
+        }, 100)
+    }
 
-window.waitInflate = waitInflate
+    window.waitInflate = waitInflate
+}
