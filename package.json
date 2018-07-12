@@ -1,0 +1,29 @@
+{
+  "name": "foo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html client.html script-loader.js renderer.js main.scss",
+    "build": "NODE_ENV=production parcel build index.html renderer.js main.scss"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-preact": "^1.1.0",
+    "node-sass": "^4.9.2",
+    "parcel-bundler": "^1.9.4"
+  },
+  "dependencies": {
+    "classname": "0.0.0",
+    "preact": "^8.2.9",
+    "preact-redux": "^2.0.3",
+    "preact-render-to-string": "^3.7.0",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0",
+    "uuid": "^3.3.2"
+  }
+}
