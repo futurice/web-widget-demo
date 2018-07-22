@@ -9,7 +9,7 @@ function inflate(element) {
     switch(widgetType) {
         case Widget1.name: return render(<Widget1 />, element)
         case Widget2.name: return render(<Widget2 />, element)
-        default: throw Error("Unknown widget. Please register the widget for rendering.")
+        default: throw Error(`Unknown widget. Please register widget ${widgetType} for rendering.`)
     }
 
 }
