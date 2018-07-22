@@ -11,7 +11,6 @@ function inflate(element) {
         case Widget2.name: return render(<Widget2 />, element)
         default: throw Error(`Unknown widget. Please register widget ${widgetType} for rendering.`)
     }
-
 }
 
 function inflateAll() {
@@ -19,6 +18,9 @@ function inflateAll() {
     widgets.forEach(inflate)
 }
 
-document.addEventListener("DOMContentLoaded", function(event) { 
-    inflateAll()
+document.addEventListener("readystatechange", function handleStateChange(event) {
+    if (document.readyState === "complete") {
+        inflateAll()
+        document.removeEventListener("readystatechange", handleStateChange)
+    }
 })
