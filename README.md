@@ -49,3 +49,18 @@ File `script-loader.js` is excluded from the build because bundlers add overhead
 ## Note for Redux users
 - Do not use Redux. Use state instead.
 - If you have to use Redux, make sure that your widget component is the root element.
+
+## Tip to isolate css rules
+- Keep your css rules contained:
+  - Do not apply css rules on elements, because they can spread to elements on the hosting site.
+- Keep hosting css rules out:
+  - Apply css rules on other attributes, such as your specific data attributes.
+  - For e.g.
+  ```html
+  <div class="my-widget" my-widget></div>
+  ```
+  ```css
+  [my-widget].my-widget {
+    /* my css rules */
+  }
+  ```
